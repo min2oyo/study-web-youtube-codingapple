@@ -1,0 +1,19 @@
+@import url(css.css);
+
+:root {
+  --main-color: red;
+  /* 변수 선언 */
+}
+
+.background {
+  background-color: var(--main-color);
+  width: calc(40% - 20px);
+  /* 사칙연산 */
+}
+
+.box {
+  color: var(--main-color);
+  font-size: 22px;
+}
+
+/*# sourceMappingURL=test.css.map */

@@ -1,0 +1,55 @@
+.sh-list {
+  li {
+    list-style: none;
+    padding: 15px;
+    border: 1px solid #eee;
+  }
+  .active {
+    background: skyblue;
+    color: white;
+    &:hover {
+      background: blue;
+    }
+  }
+}
+
+%alert-box {
+  color: white;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.alert-box-green {
+  @extend %alert-box;
+  background: green;
+}
+
+.alert-box-orange {
+  @extend %alert-box;
+  background: orange;
+}
+
+.alert-box-blue {
+  @extend %alert-box;
+  background: blue;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+@mixin column($구멍) {
+  float: left;
+  width: $구멍;
+  padding: 15px;
+}
+
+.row {
+  .col-6 {
+    @include column(100% / 2);
+  }
+  .col-4 {
+    @include column(100% / 3);
+  }
+}

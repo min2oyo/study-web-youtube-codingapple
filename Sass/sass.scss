@@ -1,0 +1,69 @@
+@use "reset";
+
+// 변수
+$메인칼라: #2a4cb2;
+$서브칼라: #eeeeee;
+$기본사이즈: 20px;
+
+.background {
+  background-color: $메인칼라;
+  font-size: ($기본사이즈 * 2);
+}
+
+.box {
+  color: $서브칼라;
+  font-size: $기본사이즈 + 2px;
+}
+
+// Nesting
+.main-bg {
+  h4 {
+    font-size: 16px;
+  }
+  button {
+    color: red;
+  }
+}
+
+.navbar {
+  &:hover {
+    color: blue;
+  }
+}
+
+// @extend
+%btn {
+  width: 100px;
+  height: 100px;
+  padding: 2px;
+}
+
+.btn-green {
+  @extend %btn;
+  color: green;
+}
+
+.btn-red {
+  @extend %btn;
+  color: red;
+}
+
+.btn-blue {
+  @extend %btn;
+  color: blue;
+}
+
+// mixin
+@mixin 폰트스타일($구멍, $구멍2) {
+  font-size: $구멍;
+  #{$구멍2}: 1px;
+}
+
+h2 {
+  @include 폰트스타일(40px, width);
+}
+
+// import
+h3 {
+  color: reset.$메인칼라;
+}
